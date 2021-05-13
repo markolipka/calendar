@@ -11,5 +11,9 @@ test_that("ic_datetime works for 20180809T160000Z:", {
 })
 
 test_that("ic_datetime is NA for empty:", {
-  expect_output(ic_datetime(""), NA)
+  expect_output(suppressWarnings(ic_datetime("")), NA)
+})
+
+test_that("ic_datetime warns about input format:", {
+  expect_warning(ic_datetime(""))
 })
