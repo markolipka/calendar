@@ -23,16 +23,17 @@ ic_event(
 \item{start_time}{start time. By default the currently started hour.}
 
 \item{end_time}{a number representing the number of hours
-after \code{start_time} or a datetime object (of class \code{POSIXct}) when
-the event ends. By default set to \code{1}, meaning 1 hour after \code{start_time}.}
+after \code{start_time} (if class \code{POSIXct}) or a datetime object (of class \code{POSIXct}) or
+the number of days including \code{start_time} (if class \code{Date}) or a date object (of class \code{Date}) when
+the event ends. By default set to \code{1}, meaning 1 hour after \code{start_time} or 1 day all-day event.}
 
-\item{format}{required if start_time and end_time are vectors and are not of datetime format
-"\\%Y-\\%m-\\%d \\%H:\\%M", you can use \code{calendar::formats} object for convenience.}
+\item{format}{required if start_time and end_time are vectors and are not of
+datetime format "\%Y-\%m-\%d \%H:\%M", you can use \code{calendar::formats} object for convenience.}
 
 \item{summary}{short outline of the event}
 
 \item{more_properties}{add placeholder columns for properties in addition to \code{properties_core},
-dy default \code{FALSE}}
+by default \code{FALSE}}
 
 \item{event_properties}{named vector of additional properties to include. By default
 These include names stored in the data object \code{properties} (a packaged dataset),
